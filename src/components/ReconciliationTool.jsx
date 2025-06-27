@@ -163,11 +163,11 @@ const ReconciliationTool = () => {
       
       setIsProcessing(false);
       
-      // Show results with a slight delay for smooth animation
+
       setTimeout(() => {
         setShowResults(true);
       }, 300);
-    }, 2000); // 2 second processing delay
+    }, 2000); 
   };
 
   // Export to CSV
@@ -212,18 +212,18 @@ const ReconciliationTool = () => {
   };
 
   // Format currency
-  const formatCurrency = (amount) => {
-    if (amount === null || amount === undefined) return 'N/A';
-    return new Intl.NumberFormat('en-US', { 
-      style: 'currency', 
-      currency: 'USD',
-      minimumFractionDigits: 2 
-    }).format(amount);
-  };
+const formatCurrency = (amount) => {
+  if (amount === null || amount === undefined) return 'N/A';
+  return new Intl.NumberFormat('en-KE', { 
+    style: 'currency', 
+    currency: 'KES',
+    minimumFractionDigits: 2 
+  }).format(amount);
+};
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Separate Component Style */}
+      
       <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           <div className="text-center">
@@ -235,7 +235,7 @@ const ReconciliationTool = () => {
                 ReconFlow
               </h1>
               <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full">
-                <span className="text-sm font-semibold text-blue-700">✨ Smart Reconciliation Made Simple</span>
+                <span className="text-sm font-semibold text-blue-700">Smart Reconciliation Made Simple</span>
               </div>
             </div>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-6">
@@ -260,9 +260,8 @@ const ReconciliationTool = () => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        {/* File Upload Section */}
+       
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Internal System Upload */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300">
